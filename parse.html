@@ -1,0 +1,26 @@
+<script>
+  let a = prompt('숫자를 한 번 넣어봐.')
+  a = Number(a)
+  const b = Number(prompt('기왕한 것 한 번 더 넣어봐.'))
+  
+  alert(`1번 : ${a}, 2번 : ${b} = ${a+b}`)
+</script>
+<script>
+  let c = true
+  const d = String(c) // "true"
+  const e = Number(c) // 1
+  const f = Number(false) // 0
+
+alert(`${d} + ${e} + ${f}`)
+</script>
+<script>
+  // false 5가지.
+  const q = Boolean(0)
+  const w = Boolean("")
+  const r = Boolean(null)
+  const t = Boolean(undefined)
+  const y = Boolean(NaN)
+
+  alert(`${q}, ${w}, ${r}, ${t}, ${y}`)
+  // 나머지는 전부 true
+</script>

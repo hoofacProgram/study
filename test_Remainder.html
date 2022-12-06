@@ -1,0 +1,8 @@
+<script>
+  const yyyy = Number(prompt('태어난 년도 입력'))
+  const _y = yyyy % 12
+  const tt = '신, 유, 술, 해, 자, 축, 인, 묘, 진, 사, 오, 미'.split(',')
+  const $y = yyyy % 10
+  const rr = '경,신,임,계,갑,을,병,정,무,기'.split(',')
+  alert(`${rr[$y]}${tt[_y]}`.replace(' ',''))
+</script>

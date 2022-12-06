@@ -1,0 +1,21 @@
+<script>
+  const inNum = Number(prompt("숫자. 1 ~ 3"))
+  switch (inNum) {
+    case 1:
+      alert("1")
+      break  // 이거 안하면 해당 아래 케이스 전부 확인 안하고 실행.
+    case 2:
+      alert("2")
+      break
+    case 3:
+      alert("3")
+      break
+    default:
+    alert("입력값이 잘못 됐어요.")
+  }
+</script>
+<script>
+  const _x = Number(prompt("숫자 넣어 봐."))
+  const x = _x >= 0 ? '양수' : '음수'
+  alert(`${x}`)
+</script>
