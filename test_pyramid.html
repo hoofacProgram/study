@@ -1,0 +1,62 @@
+<script>  // 오른쪽 반쪽 삼각형
+  let outPut = ''
+
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < i + 1; j++) {
+      outPut += '*'
+    }
+    outPut += '\n'
+  }
+  console.log(outPut)
+</script>
+<script>  // 왼쪽으로 쏠린 삼각형
+  let outPut2 = ''
+
+  for (let i = 0; i < 9; i++) {
+    for (let k = 0; k < i + 1; k++) {
+      outPut2 += ' '
+    }
+    for (let j = 0; j < 2 * i + 1; j++) {
+      outPut2 += '*'
+    }
+    outPut2 += '\n'
+  }
+  console.log(outPut2)
+</script>
+<script>  // 트리 형태
+  let outPut3 = ''
+
+  for (let i = 0; i < 9; i++) {
+    for (let k = 0; k < 8 - i; k++) {
+      outPut3 += ' '
+    }
+    for (let j = 0; j < 2 * i + 1; j++) {
+      outPut3 += '*'
+    }
+    outPut3 += '\n'
+  }
+  console.log(outPut3)
+</script>
+<script>  // 다이아 형태
+  let outPut4 = ''
+
+  for (let i = 0; i < 10; i++) {
+    for (let k = 0; k < 9 - i; k++) {
+      outPut4 += ' '
+    }
+    for (let j = 0; j < 2 * i + 1; j++) {
+      outPut4 += '*'
+    }
+    outPut4 += '\n'
+  }
+  for (let i = 0; i < 10; i++) {
+    for (let k = 0; k < i; k++) {
+      outPut4 += ' '
+    }
+    for (let j = 0; j < (9 - i) * 2 + 1; j++) {
+      outPut4 += '*'
+    }
+    outPut4 += '\n'
+  }
+  console.log(outPut4)
+</script>

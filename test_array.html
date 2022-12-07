@@ -1,0 +1,33 @@
+<script>
+  // 배열 뒤에 요소 추가
+  const a = [50, 300, 'hi', 'hello']
+  alert(a)  // 50,300,hi,hello
+  a.push(500) // 제일 뒤에 500 추가
+  alert(a)  // 50,300,hi,hello,500
+</script>
+<script>
+  // 배열 중간에 요소 추가
+  const b = [80, 250, 'ho', 'hell']
+  alert(b)  // 80,250,ho,hell
+  b.splice(2, 0, '추가')  // index 2번에 '추가' 추가
+  alert(b)  // 80,250,추가,ho,hell
+</script>
+<script>
+  // 배열 요소 삭제
+  const c = [30, 120, 'to', 'eo']
+  alert(c)  // 30,120,to,eo
+  c.splice(1, 2)  // index 1번부터 2개 삭제
+  alert(c)  // 30,eo
+</script>
+<script>
+  // 배열 요소 찾기
+  const d = [70, 20, '아하', '주하']
+  const _d = d.indexOf('아하')
+  const _d_ = d.indexOf('하마')
+  alert(_d) // 2
+  alert(_d_) // -1 : 찾는 값이 없으면 -1 출력
+
+  // 찾아낸 요소 인덱스를 이용해서 요소 삭제
+  d.splice(_d, 1)
+  alert(d)  // 70,20,주하 : 아하를 찾아서 삭제했음
+</script>
