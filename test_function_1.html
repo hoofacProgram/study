@@ -1,0 +1,27 @@
+<script>
+  // 익명함수
+  const isLeapYear = function (연도) {
+    return 연도 % 4 === 0
+    && 연도 % 100 !== 0
+    || 연도 % 400 === 0
+  }
+  
+  // 선언적 함수
+  function min (array) {
+    let outPut = array[0]
+    for (const value of array) {
+      if (outPut > value) {
+        outPut = value
+      }
+    }
+    return outPut
+  }
+  
+  console.log(isLeapYear(2020))
+  console.log(isLeapYear(2010))
+  console.log(isLeapYear(2000))
+  console.log(isLeapYear(1900))
+
+  const array = [55, 222, 33, 111, 277, 22, 66]
+  console.log(min(array))
+</script>

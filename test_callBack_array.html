@@ -1,0 +1,22 @@
+<script>
+  let array = [222, 55, 111, 33, 77]
+
+  // 콜백함수를 이용해서 배열의 값을 하나씩 꺼낸다
+  array.forEach(function (value, index, array){
+    console.log(`${index}번째 값은 ${value} : ${array}`)
+  })
+
+  // 콜백함수를 이용해서 배열의 값을 하나씩 꺼낸 다음 조건에 맞는 놈들만 재할당 식으로 활용
+  array = array.filter(function (value, index, array){
+    return value % 2 === 1
+  })
+  // array = array.filter((value, index, array) => value % 2 === 1) : 위와 동일(애로우)
+  console.log(...array)
+
+  // 콜백함수를 이용해서 모든 배열 값에 수정값을 반영해서 재할당 식으로 활용
+  array = array.map(function(value, index, array){
+    return value + "~!"
+  })
+  // array = array.map((value, index, array) => value + "~!") : 위와 동일(애로우)
+  console.log(...array)
+</script>

@@ -1,0 +1,13 @@
+<script>
+  const 함수 = function (a, b, c) {
+    console.log(a, b, c)
+  }
+
+  const a = [1, 2, 3]
+  함수(a[0], a[1], a[2])
+  /// 위의 함수 호출과 동일한 내용 : 배열을 풀어서 넣어준다
+  함수(...a)
+  const b = []
+  b.push(...a)
+  console.log(...b)
+</script>
