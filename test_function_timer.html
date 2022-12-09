@@ -1,0 +1,16 @@
+<script>
+  // 특정 시간 후 한번
+  const a = setTimeout(function(){
+    console.log("타임아웃")
+  }, 1000)
+  
+  // 일정 시간마다 계속
+  const b = setInterval(function(){
+    console.log("인터벌")
+  }, 1000)
+
+  console.log(a, b)
+
+  clearTimeout(a)   // 타임아웃 함수 중지 => 인터벌도 중지 가능?!
+  clearInterval(b)  // 인터벌 함수 중지 => 타입아웃도 중지 가능?!
+</script>
