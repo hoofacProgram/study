@@ -1,0 +1,26 @@
+<script>
+  const a = `
+  
+  d
+
+  `
+  const b = a.trim()  // 공백 삭제
+  console.log(`a : ${a}`)
+  console.log(`b : ${b}`)
+</script>
+<script>
+  const aa = '22.12.10, 토요일, 쉬는날, 소방관'
+  const bb = aa.split(',')  // ','(쉼표)를 기준으로 잘내서 배열로 저장.
+  console.log(bb)
+  // 심화
+  const input = `
+  일자, 달러, 엔, 유로
+  02, 1141, 1097, 1262
+  03, 1148, 1111, 1274
+  04, 1140, 1107, 1266
+  `
+  const 환률 = input.trim()                        // 공백 자르고
+                    .split('\n')                   // 엔터를 기준으로 잘라서 배열화 하고
+                    .map(line => line.split(','))  // 배열을 line(임시로 명명)별로 ',' 기준으로 또 자른다
+  console.log(환률) // 2차원 배열 출력
+</script>
