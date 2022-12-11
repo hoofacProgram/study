@@ -1,0 +1,43 @@
+<!-- 객체에 기본값 지정하기 -->
+<script>
+  // 1번 타입 : 작성 쉬움
+  // status는 기본값이 지정되어 있어 입력하지 않으면 기본값 출력
+  const test = function(name, age, color, status = '괜춘'){
+    return `${name}은/는 ${age}살이고 ${color}색이고 ${status}한 상태이다.`
+  }
+  console.log(test('가라', 100, '노랑'))
+</script>
+<script>
+  // 2번 타입 : 읽기 쉬움 / 최신 트랜드
+  const test2 = function(object){
+    // 과거방식 1
+    object.status = object.status !== undefined ? object.status : '괜춘'
+    return `${object.name}은/는 ${object.age}살이고 ${object.color}색이고 ${object.status}한 상태이다.`
+
+    // 2, 3 방식의 경우는 빈문자열 or 0과 같은 false 값이 들어가지 않는다는 전제하에 가능
+    // 과거방식 2
+    object.status = object.status ? object.status : '괜춘'
+    return `${object.name}은/는 ${object.age}살이고 ${object.color}색이고 ${object.status}한 상태이다.`
+
+    // 과거방식 3
+    object.status = object.status || '괜춘'
+    return `${object.name}은/는 ${object.age}살이고 ${object.color}색이고 ${object.status}한 상태이다.`
+
+    // 최신방식 1
+    object = {status: '괜춘', ...object}
+    return `${object.name}은/는 ${object.age}살이고 ${object.color}색이고 ${object.status}한 상태이다.`
+    // 최신방식 1-1 : 객체 맴버를 기본으로 쉽게 꺼내놓고 쓰는 형태
+    const {name, age, color, status} = {status: '괜춘', ...object}
+    return `${name}은/는 ${age}살이고 ${color}색이고 ${status}한 상태이다.`
+
+    // 최신방식 2
+    const test2 = function({name, age, color, status = '괜춘'}){
+      return `${name}은/는 ${age}살이고 ${color}색이고 ${status}한 상태이다.`
+    }
+  }
+  console.log(test2({
+    name: '고노',
+    age: 77,
+    color: '핑크'
+  }))
+</script>
