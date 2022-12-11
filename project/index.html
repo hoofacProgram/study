@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <!-- body 생성 전이라서 기능할 수 없음 -->
+  <script>document.body.innerHTML += '<h2>head 안에</h2>'</script><!-- head 안에 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 문서 태그 전부 호출되고 난 이후 기능.
+      // 문서 조작 가능
+      document.body.innerHTML += '<h2>head 안에 - 2</h2>'
+    })
+  </script>
+</head>
+<body>
+  <script>document.body.innerHTML += '<h2>body 요소 윗쪽</h2>'</script><!-- body 요소 윗쪽 -->
+  <h1>안녕안녕</h1>
+  <script>document.body.innerHTML += '<h2>body 요소 아랫쪽</h2>'</script><!-- body 요소 아랫쪽 -->
+</body>
+</html>
