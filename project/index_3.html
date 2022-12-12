@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hi = document.querySelector('#hi')
+      const ho = document.querySelector('#ho')
+
+      // 값 추출
+      console.log(hi.textContent)
+      console.log(ho.innerHTML)
+      // 값 넣기
+      hi.textContent = '하이가 <br>변했다'  // 태그도 출력
+      ho.innerHTML = '바이가 <br>변했다'    // 태그를 태그로 반영
+    })
+  </script>
+</head>
+<body>
+  <h1 id="hi" class="ci">하이하이</h1>
+  <h1 id="ho" class="by">바이바이</h1>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 태그 선택자
+      document.querySelector('h1').style.color = 'red'
+      // 아이디 선택자
+      document.querySelector('#ho').style.backgroundColor = 'orange'
+      // 클래스 선택자
+      document.querySelector('.to.ci').style.textAlign = 'center'
+      // 속성 선택자
+      document.querySelector('[type=text]').style.borderRadius = '10px'
+      // 후손 선택자
+      document.querySelector('body input').style.backgroundColor = 'blue'
+    })
+  </script>
+</head>
+<body>
+  <h1 id="hi" class="ci">하이하이</h1>
+  <h1 id="ho" class="by">바이바이</h1>
+  <h1 id="hu" class="to">나이나이</h1>
+  <input>
+  <input type="text">
+</body>
+</html>
