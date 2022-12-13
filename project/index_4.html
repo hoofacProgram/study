@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.createElement('h1')
+      header.textContent = "h1 태그를 만들어요"
+      header.style.color = 'red'
+      const body = document.querySelector('body')
+      body.appendChild(header)
+      setTimeout(() => {
+        // 아래, 두 태그는 같은 효과를 보인다
+        //body.removeChild(header)
+        header.parentNode.removeChild(header)
+      }, 2000);
+    })
+  </script>
+</head>
+<body>
+</body>
+</html>

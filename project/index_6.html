@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let count = 0;
+      const lis = () => {
+        header.textContent = `${++count}번 눌렀어요`
+      }
+      const header = document.createElement('h1')
+      header.style.userSelect = 'none'  // 클릭해도 선택되지 않는다
+      header.textContent = `${count}번 눌렀어요`
+      
+      let connState = '해제'
+      const p = document.createElement('p')
+      p.textContent = `이벤트가 ${connState} 되었습니다`
+      
+      const connBtn = document.createElement('button')
+      connBtn.style.width = '100px'
+      connBtn.style.height = '50px'
+      connBtn.textContent = '연결'
+      connBtn.addEventListener('click', () => {
+        header.addEventListener('click', lis)
+        connState = '연결'
+      p.textContent = `이벤트가 ${connState} 되었습니다`
+      })
+      
+      const disconnBtn = document.createElement('button')
+      disconnBtn.style.width = '100px'
+      disconnBtn.style.height = '50px'
+      disconnBtn.textContent = '해제'
+      disconnBtn.addEventListener('click', () => {
+        header.removeEventListener('click', lis)
+        connState = '해제'
+      p.textContent = `이벤트가 ${connState} 되었습니다`
+      })
+
+      document.body.appendChild(header)
+      document.body.appendChild(connBtn)
+      document.body.appendChild(disconnBtn)
+      document.body.appendChild(p)
+
+
+    })
+  </script>
+</head>
+<body>
+</body>
+</html>

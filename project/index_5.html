@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.createElement('h2')
+      header.textContent = '하이, 안녕, 방가'
+      const first = document.querySelector('#first')
+      const second = document.querySelector('#second')
+
+      // 1회성 이동 : first에서 second로
+      //first.appendChild(header)
+      // setTimeout(() => {
+      //   // 이동시에는 그냥 이동 목적지에 집어 넣으면 된다
+      //   second.appendChild(header)
+      // }, 2000);
+
+      // first와 second 사이 반복적으로 와리가리 1
+      // const toFirst = () => {
+      //   first.appendChild(header)
+      //   setTimeout(toSecond, 1000);
+      // }
+      // const toSecond = () => {
+      //   second.appendChild(header)
+      //   setTimeout(toFirst, 1000);
+      // }
+      // toFirst()
+
+      // first와 second 사이 반복적으로 와리가리 1
+      // const array = [
+      //   first
+      //   , second
+      // ]
+      // let idx = 0
+      // const change = () => {
+      //   array[idx % 2].appendChild(header)
+      //   idx++
+      // }
+      // setInterval(change, 1000);  // 초기 출력은 없이, 1000 이후부터 반복적으로 출력
+      // change()  // 초기 출력을 위해 한번 출력용
+    })
+  </script>
+</head>
+<body>
+  <div id="first">
+    <h1>first div tag</h1>
+  </div>
+  <hr>
+  <div id="second">
+    <h1>second div tag</h1>
+  </div>
+</body>
+</html>
