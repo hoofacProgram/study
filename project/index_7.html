@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 이벤트객체를 통해서 key 데이터를 가져 온다
+      const h2 = document.querySelector('h2')
+      document.addEventListener('keydown', (이벤트객체) => {
+        document.body.innerHTML = `<h2>${이벤트객체.code}가 눌려 있습니다<h2>`
+      })
+
+      const h1 = document.querySelector('h1')
+      const textarea = document.querySelector('textarea')
+      // 하위 3가지 keyup은 같은 내용에 대한 표현식이다
+      textarea.addEventListener('keyup', () => {
+        h1.textContent = `글자수 ${textarea.value.length}`
+      })
+      textarea.addEventListener('keyup', (e) => {
+        h1.textContent = `글자수 ${e.currentTarget.value.length}`
+      })
+      textarea.addEventListener('keyup', function (e) {
+        h1.textContent = `글자수 ${this.value.length}`
+      })
+
+      // 이벤트 막기
+      const a = document.querySelector('a')
+      a.addEventListener('click', (e) => {
+        e.preventDefault()
+      })
+
+    })
+  </script>
+</head>
+<body>
+  <h2></h2>
+  <h1>글자 수</h1>
+  <textarea></textarea>
+  <br>
+  <a href="https://naver.com">naver</a>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // button click
+      const btnA = document.querySelector('button')
+      const btnB = document.querySelector('input[type=button]')
+      btnA.addEventListener('click', (e) => {
+        e.currentTarget.textContent = "변신A"
+      })
+      btnB.addEventListener('click', () => {
+        btnB.value = "변신B"
+      })
+
+      // form submit
+      const form = document.querySelector('form')
+      form.addEventListener('submit', (e) => {
+        const text = document.querySelector('input[type=text]')
+        if (text.value.indexof('@') > 0) {
+          alert('정상')
+        } else {
+          alert('다시')
+          e.preventDefault()
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <!-- click 이벤트 사용 -->
+  <button>내용</button>
+  <input type="button" value="내용">
+
+  <!-- submit 이벤트 사용 -->
+  <!-- submit 타입은 기본적으로 form 태그 안에서 사용 -->
+  <!-- form 안에 button을 넣으면 submit 처럼 사용된다 -->
+  <form action="">
+    <input type="text" name="test" id="">
+    <input type="submit" value="내용">
+  </form>
+</body>
+</html>
