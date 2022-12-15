@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const select = document.querySelector('select')
+      const p = document.querySelector('p')
+      select.addEventListener('change', (event) => {
+        const options = event.currentTarget.options
+        const index = options.selectedIndex
+        p.textContent = options[index].textContent
+
+        console.log(options)
+        console.log(index)
+      })
+    })
+  </script>
+</head>
+<body>
+<select name="" id="">  <!-- multiple 속성으로 다중 선택 가능 -->
+  <option value="">족발</option>
+  <option value="">보쌈</option>
+  <option value="">수육</option>
+  <option value="">국밥</option>
+</select>
+<p>족발</p>
+</body>
+</html>
