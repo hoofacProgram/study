@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // super class
+    class Rectangle {
+      constructor(width, height) {
+        this.width = width
+        this.height = height
+      }
+      getArea () {return this.width * this.height}
+      getPerimeter () {return (this.width + this.height) * 2}
+    }
+    // child class
+    class Square extends Rectangle {
+      // constructor를 수정할 경우 내부에 super는 반드시 넣는다
+      constructor(width) {
+        super(width, width) // super 클래스를 호출하는 느낌
+      }
+    }
+    const square = new Square(10)
+    console.log(square.getArea())
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
