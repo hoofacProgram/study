@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>  
+  <script type="text/babel">
+    const container = document.querySelector('#root')
+    const content = '컨텐츠 입력은 {}을 사용한다'
+    const attr = 'https://www.naver.com'
+    const attrContent = '속성값도 따옴표 없이 {}만 사용한다'
+    const style = {backgroundColor : 'red'}
+    const styleContent = '스타일 값은 객체({})로 선언하고 {}안에 넣어준다'
+    const array = [<li>배열</li>, <li>사용</li>, <li>가능</li>]
+    const event = () => {alert('이벤트명은 camelCase를 사용한다')}  // 인자값도 받을 수 있음
+
+    // 컴포넌트는 하나의 태그만 가질 수 있다
+    // 두개 이상의 태그 활용시, <div></div> 등의 방법으로 하나의 태그를 활용, 내부에 묶어서 사용한다
+    const component = <div>
+      <h1 onClick={event}>{content}</h1>
+      <a href={attr}>{attrContent}</a>
+      <h2 style={style}>{styleContent}</h2>
+      <ul>{array}</ul>
+      <span></span>
+      </div>
+    // const component = <br />  // babel 사용시, 단일 태그는 반드시 '/'로 닫아야 한다
+      
+    ReactDOM.render(component, container)
+  </script>
+</body>
+</html>
